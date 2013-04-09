@@ -7,5 +7,8 @@ public class InfoScreen extends Screen
 {
 	private Button finish;
 	
+	public void finishClicked() {
+		finish();
+	}
     
 }
