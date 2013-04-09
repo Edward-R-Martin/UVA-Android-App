@@ -4,13 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="15dp"
+        android:layout_y="17dp"
+        android:text="Information"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <Button
         android:id="@+id/finish"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="120dp"
-        android:layout_y="320dp"
+        android:layout_x="188dp"
+        android:layout_y="400dp"
         android:text="End Program" />
 
 </AbsoluteLayout>

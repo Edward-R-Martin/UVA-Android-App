@@ -14,6 +14,7 @@ public class SplashScreen extends Screen {
 
 	public void startButtonClicked() {
 		presentScreen(InfoScreen.class);
+		finish();
 	}
 
 	@Override
