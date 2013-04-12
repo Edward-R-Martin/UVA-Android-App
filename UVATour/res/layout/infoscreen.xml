@@ -14,15 +14,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="36sp" />
 
-    <Button
-        android:id="@+id/finish"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="188dp"
-        android:layout_y="400dp"
-        android:text="End Program" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -78,5 +69,22 @@
         android:layout_y="164dp"
         android:text="Update Score"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/finish"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="188dp"
+        android:layout_y="403dp"
+        android:text="End Tour" />
+
+    <Button
+        android:id="@+id/startTour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="58dp"
+        android:layout_y="371dp"
+        android:text="Start Tour" />
 
 </AbsoluteLayout>

@@ -3,6 +3,7 @@ package edu.virginia.CS2110.uvatour;
 
 
 import sofia.app.Screen;
+import sofia.util.Timer;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -13,14 +14,15 @@ public class SplashScreen extends Screen {
 	private Button startButton;
 
 	public void startButtonClicked() {
-		presentScreen(InfoScreen.class);
 		finish();
+		presentScreen(InfoScreen.class);
 	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splashscreen);
+		startButtonClicked();
 	}
 
 	@Override
