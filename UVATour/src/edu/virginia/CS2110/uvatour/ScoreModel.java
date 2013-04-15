@@ -6,22 +6,17 @@ public class ScoreModel extends sofia.util.Observable {
 	private int fullScore;
 
 	public int getTempScore() {
-		if (tempScore>0)
-		{
-			tempScore--;
-		}
-		notifyObservers();
 		return tempScore;
 	}
 
 	public int getFullScore() {
-		notifyObservers();
 		return fullScore;
 	}
 	
-	public void setTempScore(int score) {
-		tempScore=score;
-		notifyObservers();
+	
+	public void setTempScore(int newTempScore) {
+		tempScore=newTempScore;
+		notifyObservers("string");
 	}
 
 	public void calculateFinalScore() {

@@ -22,7 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="InfoScreen" android:theme="@style/AppBaseTheme"></activity>
++        
+        <activity
+            android:name="InfoScreen"
+            android:theme="@style/AppBaseTheme" >
+        </activity>
     </application>
 
 </manifest>

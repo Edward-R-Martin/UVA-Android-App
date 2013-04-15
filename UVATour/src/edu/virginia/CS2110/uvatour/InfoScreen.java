@@ -10,12 +10,11 @@ import sofia.util.Timer;
 
 @ScreenLayout(scroll = true)
 public class InfoScreen extends Screen {
+	
 	private Button finish;
 	private Button startTour;
 	private EditText updateScore;
-	private EditText currentCoords;
 	private EditText score;
-	private EditText temperature;
 	
 	private ScoreModel scoreModel;
 
@@ -23,6 +22,8 @@ public class InfoScreen extends Screen {
 	public void initialize() {
 		scoreModel = new ScoreModel();
 		scoreModel.addObserver(this);
+		
+		//scoreModel.setTempScore(10);
 	}
 	
 	public void finishClicked() {
@@ -30,15 +31,15 @@ public class InfoScreen extends Screen {
 	}
 
 	public void startTourClicked() {
-		
-			Timer.callRepeatedly(scoreModel, "getTempScore", 5000);
+		//scoreModel.setTempScore(100);
+		presentScreen(Map.class);
 	}
 	
 	@SuppressLint("DefaultLocale")
     public void changeWasObserved(ScoreModel theScoreModel)
     {
-		String updateScoreString = ""+scoreModel.getTempScore();
-		String scoreString = ""+scoreModel.getFullScore();
+		String updateScoreString = String.format("%d", scoreModel.getTempScore());
+		String scoreString = String.format("%d", scoreModel.getFullScore());
 		updateScore.setText(updateScoreString);
 		score.setText(scoreString);
     }

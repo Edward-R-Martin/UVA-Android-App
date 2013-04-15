@@ -15,7 +15,7 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/CurrentCoords"
+        android:id="@+id/Text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="20dp"
@@ -38,7 +38,6 @@
         android:layout_height="wrap_content"
         android:layout_x="17dp"
         android:layout_y="164dp"
-        android:text="0"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -56,7 +55,6 @@
         android:layout_height="wrap_content"
         android:layout_x="86dp"
         android:layout_y="164dp"
-        android:text="1000"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button

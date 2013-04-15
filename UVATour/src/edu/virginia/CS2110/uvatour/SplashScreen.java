@@ -5,7 +5,6 @@ package edu.virginia.CS2110.uvatour;
 import sofia.app.Screen;
 import sofia.util.Timer;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.widget.Button;
 
