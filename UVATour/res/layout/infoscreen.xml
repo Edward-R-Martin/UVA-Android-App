@@ -15,7 +15,7 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/CurrentCoords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="20dp"
@@ -24,7 +24,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/nextCoords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="20dp"
@@ -33,24 +33,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="17dp"
         android:layout_y="164dp"
-        android:text="Score"
+        android:text="0"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="55dp"
-        android:layout_y="269dp"
-        android:text="Warm/Cold"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/blue"
-        android:textSize="27sp" />
 
     <TextView
         android:id="@+id/currentCoords"
@@ -67,24 +56,35 @@
         android:layout_height="wrap_content"
         android:layout_x="86dp"
         android:layout_y="164dp"
-        android:text="Update Score"
+        android:text="1000"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/startTour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="31dp"
+        android:layout_y="388dp"
+        android:text="Start Tour" />
 
     <Button
         android:id="@+id/finish"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="188dp"
-        android:layout_y="403dp"
+        android:layout_x="202dp"
+        android:layout_y="391dp"
         android:text="End Tour" />
 
-    <Button
-        android:id="@+id/startTour"
+    <TextView
+        android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="58dp"
-        android:layout_y="371dp"
-        android:text="Start Tour" />
+        android:layout_x="70dp"
+        android:layout_y="266dp"
+        android:text="Warm/Cold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/blue"
+        android:textSize="27sp" />
 
 </AbsoluteLayout>

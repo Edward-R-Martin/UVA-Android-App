@@ -22,7 +22,6 @@ public class SplashScreen extends Screen {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splashscreen);
-		startButtonClicked();
 	}
 
 	@Override
