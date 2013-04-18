@@ -1,76 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dip"
-        android:orientation="horizontal" >
+    <!-- Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code] http://www.vogella.com/articles/AndroidLocationAPI/article.html -->
 
-        <TextView
-            android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="5dip"
-            android:text="Latitude: "
-            android:textSize="20dip" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/TextView02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="unknown"
-            android:textSize="20dip" >
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/TextView03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="5dip"
-            android:text="Longitute: "
-            android:textSize="20dip" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/TextView04"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="unknown"
-            android:textSize="20dip" >
-        </TextView>
-    </LinearLayout>
-   
     <SlidingDrawer
         android:id="@+id/slidingDrawer1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="464dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="1dp"
+        android:layout_x="-1dp"
+        android:layout_y="1dp"
         android:content="@+id/content"
         android:handle="@+id/handle" >
-<!-- Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code] http://www.vogella.com/articles/AndroidLocationAPI/article.html -->
+
         <Button
             android:id="@+id/handle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Handle" />
+            android:text="Information Menu" />
 
         <AbsoluteLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="455dp"
+            android:background="@color/blue" >
 
             <TextView
                 android:id="@+id/textView1"
@@ -92,21 +50,12 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
-                android:id="@+id/nextCoords"
+                android:id="@+id/text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_x="8dp"
                 android:layout_y="143dp"
                 android:text="Next Location Coordinates"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:id="@+id/currentCoords"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_x="273dp"
-                android:layout_y="80dp"
-                android:text="Medium Text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -116,8 +65,88 @@
                 android:layout_x="10dp"
                 android:layout_y="10dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-        </AbsoluteLayout>
 
+            <TextView
+                android:id="@+id/currentCoords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="202dp"
+                android:layout_y="72dp"
+                android:text="x*x&apos;x&quot; W y*y&apos;y&quot;N"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="87dp"
+                android:layout_y="237dp"
+                android:text="Warm/Cold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/red"
+                android:textSize="27sp" />
+
+            <TextView
+                android:id="@+id/nextCoords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="170dp"
+                android:layout_y="173dp"
+                android:text="x*x&apos;x&quot; W y*y&apos;y&quot;N"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/finish"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="12dp"
+                android:layout_y="292dp"
+                android:text="End Tour" />
+        </AbsoluteLayout>
     </SlidingDrawer>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/slidingDrawer1"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="26dp"
+        android:text="Longitute: "
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView03"
+        android:layout_alignTop="@+id/TextView03"
+        android:layout_toRightOf="@+id/TextView03"
+        android:text="unknown"
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="5dip"
+        android:text="Latitude: "
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView01"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/TextView01"
+        android:text="unknown"
+        android:textSize="20dip" />
+
+</RelativeLayout>

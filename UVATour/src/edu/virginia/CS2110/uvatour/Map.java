@@ -30,6 +30,11 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 	public void onClick(View arg0) {
 
 	}
+	
+	public void finishClicked() {
+		presentScreen(ShowMap.class);
+		finish();
+	}
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -96,5 +101,10 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 		super.onPause();
 		locationManager.removeUpdates(this);
 	}
+
+	
+	
+	// we used some of the code from this source
+	// Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code] http://www.vogella.com/articles/AndroidLocationAPI/article.html
 
 }
