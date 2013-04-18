@@ -21,8 +21,7 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 
 	private SlidingDrawer information;
 	private Button handle;
-	private TextView latituteField;
-	private TextView longitudeField;
+	private TextView currentCoords;
 	private LocationManager locationManager;
 	private String provider;
 
@@ -41,8 +40,7 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map);
 
-		latituteField = (TextView) findViewById(R.id.TextView02);
-		longitudeField = (TextView) findViewById(R.id.TextView04);
+		currentCoords=(TextView) findViewById(R.id.currentCoords);
 
 		// Get the location manager
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -57,8 +55,7 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 			System.out.println("Provider " + provider + " has been selected.");
 			onLocationChanged(location);
 		} else {
-			latituteField.setText("Location not available");
-			longitudeField.setText("Location not available");
+			currentCoords.setText("Location not available");
 		}
 	}
 
@@ -66,9 +63,7 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 	public void onLocationChanged(Location location) {
 		double lat = location.getLatitude();
 		double lng = location.getLongitude();
-		latituteField.setText(String.valueOf(lat));
-		longitudeField.setText(String.valueOf(lng));
-
+		currentCoords.setText(String.valueOf(lat)+", "+String.valueOf(lng));
 	}
 
 	@Override

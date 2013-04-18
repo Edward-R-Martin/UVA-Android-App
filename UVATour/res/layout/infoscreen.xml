@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_x="86dp"
         android:layout_y="164dp"
+        android:text="0000"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button

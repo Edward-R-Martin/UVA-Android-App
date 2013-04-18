@@ -1,6 +1,7 @@
 package edu.virginia.CS2110.uvatour;
 
 import android.widget.Button;
+import android.widget.TextView;
 import android.annotation.SuppressLint;
 import android.location.*;
 import android.widget.EditText;
@@ -13,8 +14,8 @@ public class InfoScreen extends Screen {
 	
 	private Button finish;
 	private Button startTour;
-	private EditText updateScore;
-	private EditText score;
+	private TextView updateScore;
+	private TextView score;
 	
 	private ScoreModel scoreModel;
 
@@ -22,8 +23,8 @@ public class InfoScreen extends Screen {
 	public void initialize() {
 		scoreModel = new ScoreModel();
 		scoreModel.addObserver(this);
-		
-		//scoreModel.setTempScore(10);
+		System.out.println();
+		scoreModel.setTempScore(1000);
 	}
 	
 	public void finishClicked() {
@@ -36,11 +37,10 @@ public class InfoScreen extends Screen {
 	}
 	
 	@SuppressLint("DefaultLocale")
-    public void changeWasObserved(ScoreModel theScoreModel)
+    public void changeWasObserved(ScoreModel theScoreModel, String str)
     {
-		String updateScoreString = String.format("%d", scoreModel.getTempScore());
-		String scoreString = String.format("%d", scoreModel.getFullScore());
-		updateScore.setText(updateScoreString);
-		score.setText(scoreString);
+		System.out.println(str);
+		updateScore.setText(str);
+		//score.setText(scoreString);
     }
 }

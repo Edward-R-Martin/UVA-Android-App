@@ -6,16 +6,12 @@
 
     <!-- Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code] http://www.vogella.com/articles/AndroidLocationAPI/article.html -->
 
-
     <SlidingDrawer
         android:id="@+id/slidingDrawer1"
         android:layout_width="match_parent"
         android:layout_height="464dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="1dp"
-        android:layout_x="-1dp"
-        android:layout_y="1dp"
         android:content="@+id/content"
         android:handle="@+id/handle" >
 
@@ -68,15 +64,6 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
-                android:id="@+id/currentCoords"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_x="202dp"
-                android:layout_y="72dp"
-                android:text="x*x&apos;x&quot; W y*y&apos;y&quot;N"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
                 android:id="@+id/temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,50 +91,16 @@
                 android:layout_x="12dp"
                 android:layout_y="292dp"
                 android:text="End Tour" />
+
+            <TextView
+                android:id="@+id/currentCoords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="11dp"
+                android:layout_y="118dp"
+                android:text="x*x&apos;x&quot; W y*y&apos;y&quot;N"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </AbsoluteLayout>
     </SlidingDrawer>
-
-    <TextView
-        android:id="@+id/TextView03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/slidingDrawer1"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="5dip"
-        android:layout_marginTop="26dp"
-        android:text="Longitute: "
-        android:textSize="20dip" />
-
-    <TextView
-        android:id="@+id/TextView04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView03"
-        android:layout_alignTop="@+id/TextView03"
-        android:layout_toRightOf="@+id/TextView03"
-        android:text="unknown"
-        android:textSize="20dip" />
-
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="7dp"
-        android:layout_marginRight="5dip"
-        android:text="Latitude: "
-        android:textSize="20dip" />
-
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView01"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/TextView01"
-        android:text="unknown"
-        android:textSize="20dip" />
 
 </RelativeLayout>
