@@ -4,6 +4,56 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:text="Latitude: "
+            android:textSize="20dip" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="unknown"
+            android:textSize="20dip" >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:text="Longitute: "
+            android:textSize="20dip" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="unknown"
+            android:textSize="20dip" >
+        </TextView>
+    </LinearLayout>
+    
     <SlidingDrawer
         android:id="@+id/slidingDrawer1"
         android:layout_width="match_parent"
@@ -17,11 +67,57 @@
             android:layout_height="wrap_content"
             android:text="Handle" />
 
-        <LinearLayout
+        <AbsoluteLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
-        </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="0dp"
+                android:layout_y="0dp"
+                android:text="Information"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/Text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="8dp"
+                android:layout_y="75dp"
+                android:text="Current Coordinates"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/nextCoords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="8dp"
+                android:layout_y="143dp"
+                android:text="Next Location Coordinates"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/currentCoords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="273dp"
+                android:layout_y="80dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/updateScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="10dp"
+                android:layout_y="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </AbsoluteLayout>
+
     </SlidingDrawer>
 
 </LinearLayout>
