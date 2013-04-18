@@ -6,6 +6,7 @@
 
     <!-- Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code] http://www.vogella.com/articles/AndroidLocationAPI/article.html -->
 
+
     <SlidingDrawer
         android:id="@+id/slidingDrawer1"
         android:layout_width="match_parent"
