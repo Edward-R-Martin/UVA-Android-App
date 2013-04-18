@@ -58,8 +58,8 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 
 	@Override
 	public void onLocationChanged(Location location) {
-		int lat = (int) (location.getLatitude());
-		int lng = (int) (location.getLongitude());
+		double lat = location.getLatitude();
+		double lng = location.getLongitude();
 		latituteField.setText(String.valueOf(lat));
 		longitudeField.setText(String.valueOf(lng));
 
