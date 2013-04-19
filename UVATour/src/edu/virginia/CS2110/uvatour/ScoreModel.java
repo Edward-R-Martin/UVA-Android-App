@@ -2,7 +2,7 @@ package edu.virginia.CS2110.uvatour;
 
 public class ScoreModel extends sofia.util.Observable {
 
-	private int updateScore=1000;
+	private int updateScore = 1000;
 	private int score;
 
 	public int getTempScore() {
@@ -13,11 +13,17 @@ public class ScoreModel extends sofia.util.Observable {
 	public int getFullScore() {
 		return score;
 	}
-	
-	
+
 	public void setTempScore(int newTempScore) {
-		updateScore=newTempScore;
+		updateScore = newTempScore;
 		System.out.println(updateScore);
+		notifyObservers(String.valueOf(updateScore));
+	}
+
+	public void updateScore() {
+		if (updateScore > 0) {
+			updateScore--;
+		}
 		notifyObservers(String.valueOf(updateScore));
 	}
 

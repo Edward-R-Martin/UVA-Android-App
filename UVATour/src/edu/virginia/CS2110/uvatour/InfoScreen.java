@@ -23,8 +23,9 @@ public class InfoScreen extends Screen {
 	public void initialize() {
 		scoreModel = new ScoreModel();
 		scoreModel.addObserver(this);
-		System.out.println();
+		
 		scoreModel.setTempScore(1000);
+		Timer.callRepeatedly(scoreModel, "updateScore", 1000);
 	}
 	
 	public void finishClicked() {

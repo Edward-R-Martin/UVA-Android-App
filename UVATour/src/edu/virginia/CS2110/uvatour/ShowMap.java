@@ -1,10 +1,10 @@
 package edu.virginia.CS2110.uvatour;
 
-import sofia.app.Screen;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 
-public class ShowMap extends Screen {
+public class ShowMap extends FragmentActivity {
 
 	
 	@Override

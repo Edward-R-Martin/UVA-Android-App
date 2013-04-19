@@ -1,6 +1,7 @@
 package edu.virginia.CS2110.uvatour;
 
 import sofia.app.Screen;
+import sofia.util.Timer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -9,6 +10,7 @@ import android.widget.SlidingDrawer;
 import android.widget.Toast;
 import android.widget.SlidingDrawer.OnDrawerCloseListener;
 import android.widget.SlidingDrawer.OnDrawerOpenListener;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Criteria;
 import android.location.Location;
@@ -24,6 +26,7 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 	private TextView currentCoords;
 	private LocationManager locationManager;
 	private String provider;
+	private ScoreModel scoreModel;
 
 	@Override
 	public void onClick(View arg0) {
@@ -35,12 +38,15 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 		finish();
 	}
 
-
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map);
+		scoreModel = new ScoreModel();
+		scoreModel.addObserver(this);
+		scoreModel.setTempScore(1000);
+		Timer.callRepeatedly(scoreModel, "updateScore", 1000);
 
-		currentCoords=(TextView) findViewById(R.id.currentCoords);
+		currentCoords = (TextView) findViewById(R.id.currentCoords);
 
 		// Get the location manager
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -63,7 +69,7 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 	public void onLocationChanged(Location location) {
 		double lat = location.getLatitude();
 		double lng = location.getLongitude();
-		currentCoords.setText(String.valueOf(lat)+", "+String.valueOf(lng));
+		currentCoords.setText(String.valueOf(lat) + ", " + String.valueOf(lng));
 	}
 
 	@Override
@@ -97,6 +103,13 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 		super.onPause();
 		locationManager.removeUpdates(this);
 	}
+	
+	@SuppressLint("DefaultLocale")
+    public void changeWasObserved(ScoreModel theScoreModel, String str)
+    {
+		updateScore.setText(str);
+		//score.setText(scoreString);
+    }
 
 	// we used some of the code from this source
 	// Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code]
