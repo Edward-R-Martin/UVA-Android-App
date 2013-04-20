@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SlidingDrawer;
 import android.widget.Toast;
 import android.widget.SlidingDrawer.OnDrawerCloseListener;
@@ -24,9 +25,12 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 	private SlidingDrawer information;
 	private Button handle;
 	private TextView currentCoords;
+	private EditText nextCoord;
 	private LocationManager locationManager;
 	private String provider;
 	private ScoreModel scoreModel;
+	private TextView updateScore;
+	private SlidingMenuModel menu;
 
 	@Override
 	public void onClick(View arg0) {
@@ -36,6 +40,23 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 	public void finishClicked() {
 		presentScreen(ShowMap.class);
 		finish();
+	}
+
+	public void initialize() {
+		menu = new SlidingMenuModel();
+		menu.addObserver(this);
+		menu.setCurrentCoords(400f);
+	}
+
+	public void currentCoordsEditngDone() {
+		Double coords;
+		try {
+			coords = Double.parseDouble(currentCoords.getText().toString());
+		} catch (NumberFormatException e) {
+			coords = 0.0;
+		}
+
+		menu.setCurrentCoords(coords);
 	}
 
 	public void onCreate(Bundle savedInstanceState) {
@@ -103,13 +124,18 @@ public class Map extends Screen implements OnClickListener, LocationListener {
 		super.onPause();
 		locationManager.removeUpdates(this);
 	}
-	
+
 	@SuppressLint("DefaultLocale")
-    public void changeWasObserved(ScoreModel theScoreModel, String str)
-    {
+	public void changeWasObserved(ScoreModel theScoreModel, String str) {
 		updateScore.setText(str);
-		//score.setText(scoreString);
-    }
+
+	}
+
+	@SuppressLint("DefaultLocale")
+	public void changeWasObserved(SlidingMenuModel menu, String str) {
+		String coords = String.format("%.2f", menu.getCurrentCoords());
+		currentCoords.setText(coords);
+	}
 
 	// we used some of the code from this source
 	// Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code]

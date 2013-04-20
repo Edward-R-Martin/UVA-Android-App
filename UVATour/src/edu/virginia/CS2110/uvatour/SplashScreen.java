@@ -7,14 +7,27 @@ import sofia.util.Timer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 public class SplashScreen extends Screen {
 
-	private Button startButton;
+	private Button endButton;
+	private ProgressBar progressBar;
 
-	public void startButtonClicked() {
-		finish();
+	@Override
+	public void finish() {
+		endButton.setVisibility(0);
+		progressBar.setVisibility(4);
 		presentScreen(InfoScreen.class);
+	}
+	
+	public void endButtonClicked() {
+		super.finish();
+	}
+	
+	public void initialize(){
+		progressBar.animate();
+		sofia.util.Timer.callOnce(this, "finish", 2000);
 	}
 
 	@Override
@@ -27,6 +40,8 @@ public class SplashScreen extends Screen {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.splash_screen, menu);
+
+		endButton.setVisibility(4);
 		return true;
 	}
 

@@ -1,8 +1,9 @@
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/AbsoluteLayout2"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@color/blue"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -78,11 +79,19 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/endButton"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_x="8dp"
+        android:layout_y="386dp"
+        android:text="End Tour" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="106dp"
-        android:layout_y="386dp"
-        android:text="Start" />
+        android:layout_x="105dp"
+        android:layout_y="356dp" />
 
 </AbsoluteLayout>

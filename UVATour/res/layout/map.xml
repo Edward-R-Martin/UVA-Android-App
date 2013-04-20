@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/RelativeLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_centerInParent="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <!-- Vogel, Lars (2012) ShowLocationActivity (Version 4.1) [Source Code] http://www.vogella.com/articles/AndroidLocationAPI/article.html -->
 
@@ -52,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_x="8dp"
                 android:layout_y="143dp"
-                android:text="Next Location Coordinates"
+                android:text="Enter new user Coordinates"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -74,15 +75,6 @@
                 android:textColor="@color/red"
                 android:textSize="27sp" />
 
-            <TextView
-                android:id="@+id/nextCoords"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_x="170dp"
-                android:layout_y="173dp"
-                android:text="x*x&apos;x&quot; W y*y&apos;y&quot;N"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
             <Button
                 android:id="@+id/finish"
                 style="?android:attr/buttonStyleSmall"
@@ -100,6 +92,28 @@
                 android:layout_y="118dp"
                 android:text="x*x&apos;x&quot; W y*y&apos;y&quot;N"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/countdownScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="31dp"
+                android:layout_y="208dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/nextCoord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="82dp"
+                android:layout_y="180dp"
+                android:ems="10"
+                android:inputType="numberDecimal" >
+
+                <requestFocus />
+            </EditText>
+
         </AbsoluteLayout>
     </SlidingDrawer>
 
