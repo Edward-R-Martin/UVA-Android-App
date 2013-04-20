@@ -19,7 +19,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.widget.TextView;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings({ "deprecation", "unused" })
 public class Map extends Screen implements OnClickListener, LocationListener {
 
 	private SlidingDrawer information;

@@ -12,7 +12,9 @@ import sofia.util.Timer;
 @ScreenLayout(scroll = true)
 public class InfoScreen extends Screen {
 	
+	@SuppressWarnings("unused")
 	private Button finish;
+	@SuppressWarnings("unused")
 	private Button startTour;
 	private TextView updateScore;
 	private TextView score;
